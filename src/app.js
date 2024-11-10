@@ -24,16 +24,16 @@ app.use('/api', apiRouter);
 
 app.use(errorHandler);
 
-// scheduleHourlyJob();
+scheduleHourlyJob();
 
-setTimeout(async () => {
-    console.log('Running initial job 5 seconds after server start...');
-    try {
-        await updateData({ AsteroidModel: AsteroidModel });
-        // await scheduleHourlyJob();
-    } catch (error) {
-        console.error('Error running initial job:', error);
-    }
-}, 5000);
+// setTimeout(async () => {
+//     console.log('Running initial job 5 seconds after server start...');
+//     try {
+//         await updateData({ AsteroidModel: AsteroidModel });
+//         // await scheduleHourlyJob();
+//     } catch (error) {
+//         console.error('Error running initial job:', error);
+//     }
+// }, 5000);
 
 module.exports = app;
